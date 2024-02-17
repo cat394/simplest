@@ -1,0 +1,1 @@
+export const escapeRegex = (marks: string): string => marks.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

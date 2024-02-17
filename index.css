@@ -1,0 +1,72 @@
+:root {
+  --text-size-1: 1rem;
+  --text-size-2: 1.5rem;
+  --text-size-3: 2rem;
+  --text-size-4: 2.5rem;
+  --text-size-5: 3rem;
+  --text-size-6: 3.5rem;
+  --text-size-7: 4rem;
+
+  --radius-round: 1000px;
+  --radius-5: 1rem;
+  --radius-4: 0.8rem;
+  --radius-3: 0.6rem;
+  --radius-2: 0.4rem;
+  --radius-1: 0.2rem;
+
+  --gap-5: 2rem;
+  --gap-4: 1.8rem;
+  --gap-3: 1.6rem;
+  --gap-2: 1.4rem;
+  --gap-1: 1.2rem;
+
+  --line-thin-1: 1px;
+  --line-thin-2: 1.5px;
+  --line-thin-3: 2px;
+
+  --theme-4: oklab(0.19 0 0);
+  --theme-3: #5b5899;
+  --theme-2: #878787;
+  --theme-1: #f0ece5;
+
+  --accent-1: #ea638c;
+  --accent-2: #FC0;
+
+  --gradient-1: linear-gradient(to right, rgba(247,234,163,1) 0%, rgba(236,180,238,0.56) 46.4%, rgba(163,203,247,1) 100.7% );
+
+  --p-navigation-text-color: transparent;
+  --p-navigation-link-underline: solid underline var(--theme-1) var(--line-thin-1);
+  --p-separator-width: 90%;
+  --p-property-name-shadow: var(--accent-2) 1px 0 10px;
+  --p-separator-gap: calc(var(--gap-5) * 2.5);
+  --p-box-stripe: repeating-linear-gradient(
+    -45deg,
+    rgb(37, 165, 153) 0 10px,
+    white 10px 20px
+  );
+}
+
+body {
+  background-color: var(--theme-4);
+  color: var(--theme-1);
+  margin-inline: var(--gap-2);
+  margin-block: 2rem;
+  font-size: var(--text-size-2);
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+
+h2 {
+  width: 90%;
+  border-bottom: var(--line-thin-1) solid var(--theme-2);
+}

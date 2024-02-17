@@ -1,0 +1,6 @@
+/node_modules/
+/lib/
+# top level source
+/simplest/
+/test/
+/utils/

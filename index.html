@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Simplest Demo</title>
+    <link href="./index.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="./node_modules/lit/polyfill-support.js"></script>
+    <script type="module" src="./simplest/components/index.js"></script>
+    <style>
+      body {
+        opacity: 0;
+      }
+      body.ready {
+        opacity: 1;
+        transition: 300ms opacity;
+      }
+    </style>
+    <script type="module">
+      await Promise.allSettled([
+        customElements.whenDefined('s-text'),
+        customElements.whenDefined('s-bg'),
+        customElements.whenDefined('s-box'),
+        customElements.whenDefined('s-flex'),
+        customElements.whenDefined('s-grid'),
+        customElements.whenDefined('s-flex-item'),
+        customElements.whenDefined('s-grid-item'),
+        customElements.whenDefined('s-effect'),
+      ]);
+      document.body.classList.add('ready');
+    </script>
+  </head>
+  <body>
+    <s-flex data-align-items="center;" data-justify-content="space-between;">
+      <s-flex-item>
+        <h1>
+          <s-text
+            data-color="var(--theme-1);"
+            data-size="var(--text-size-4);"
+            data-shadow="var(--accent-1)_1px_0_8px;"
+            >Welcome to Simplest!</s-text
+          >
+        </h1>
+      </s-flex-item>
+      <s-flex-item>
+        <a href="./dev/index.html">
+          <s-bg data-image="var(--gradient-1);" data-clip="text;">
+            <s-text
+              data-size="var(--text-size-2);"
+              data-color="var(--p-navigation-text-color);"
+              data-decoration="none[trans(300ms,ease-in)]; !hover::var(--p-navigation-link-underline);"
+              >Develop page</s-text
+            >
+          </s-bg>
+        </a>
+      </s-flex-item>
+    </s-flex>
+    <h2 id="text">
+      <s-text
+        data-style="italic;"
+        data-color="var(--theme-2);"
+        data-size="var(--text-size-7);"
+        data-transform="uppercase;"
+        data-line-height="0.7;"
+        data-display="block;"
+        >text</s-text
+      >
+    </h2>
+    <s-grid
+      data-width="90%;"
+      data-margin="auto;"
+      data-columns="repeat(3,1fr);"
+      data-gap="var(--gap-4);"
+    >
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Color:</s-text
+          >
+        </h3>
+        <s-text data-color="red;">Sample</s-text>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Font size:</s-text
+          >
+        </h3>
+        <s-text data-size="var(--text-size-5);" data-line-height="1;"
+          >Sample</s-text
+        >
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Font weight:</s-text
+          >
+        </h3>
+        <s-text data-weight="bold;">Sample</s-text>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Font family:</s-text
+          >
+        </h3>
+        <s-text data-family="'Protest_Riot';">Sample</s-text>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Font style:</s-text
+          >
+        </h3>
+        <s-text data-style="italic;">Sample</s-text>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Line height:</s-text
+          >
+        </h3>
+        <s-text data-line-height="4;">Sample1</s-text>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Text decoration:</s-text
+          >
+        </h3>
+        <s-text data-decoration="wavy_underline_lime_0.08em;">Sample</s-text>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Text transform:</s-text
+          >
+        </h3>
+        <s-text data-transform="uppercase;">Sample</s-text>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Text shadow:</s-text
+          >
+        </h3>
+        <s-text data-shadow="red_2px_3px;">Sample</s-text>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Text align:</s-text
+          >
+        </h3>
+        <s-text data-display="block;" data-align="center;">Sample</s-text>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Letter spacing:</s-text
+          >
+        </h3>
+        <s-text data-letter-spacing="0.4rem;">Sample</s-text>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Word spacing:</s-text
+          >
+        </h3>
+        <s-text data-word-spacing="0.5em;">Hello world</s-text>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Writing mode:</s-text
+          >
+        </h3>
+        <s-text data-writing-mode="vertical-rl;">Sample</s-text>
+      </s-grid-item>
+    </s-grid>
+    <s-box data-height="var(--p-separator-gap);"></s-box>
+    <h2 id="background">
+      <s-text
+        data-style="italic;"
+        data-color="var(--theme-2);"
+        data-size="var(--text-size-7);"
+        data-transform="uppercase;"
+        data-line-height="0.7;"
+        data-display="block;"
+        >background</s-text
+      >
+    </h2>
+    <s-grid
+      data-columns="repeat(3,1fr);"
+      data-justify-items="center;"
+      data-gap="var(--gap-4);"
+    >
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Background color:</s-text
+          >
+        </h3>
+        <s-box
+          data-width="100px;"
+          data-height="100px;"
+          data-padding="0.5rem;"
+          data-border="var(--line-thin-2)_solid_var(--theme-1);"
+        >
+          <s-bg data-color="red;"></s-bg>
+        </s-box>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Background image:</s-text
+          >
+        </h3>
+        <s-box
+          data-width="100px;"
+          data-height="100px;"
+          data-padding="0.5rem;"
+          data-border="var(--line-thin-2)_solid_var(--theme-1);"
+        >
+          <s-bg
+            data-image="{linear-gradient}(135deg,_#fc466b,_#3f5efb);"
+          ></s-bg>
+        </s-box>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Background Position:</s-text
+          >
+        </h3>
+        <s-box
+          data-width="100px;"
+          data-height="100px;"
+          data-padding="0.5rem;"
+          data-border="var(--line-thin-2)_solid_var(--theme-1);"
+        >
+          <s-bg
+            data-image="url({https://i.imgflip.com/8fc3zv.jpg});"
+            data-position="center;"
+          ></s-bg>
+        </s-box>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Background size:</s-text
+          >
+        </h3>
+        <s-box
+          data-width="100px;"
+          data-height="100px;"
+          data-padding="0.5rem;"
+          data-border="var(--line-thin-2)_solid_var(--theme-1);"
+        >
+          <s-bg
+            data-image="url({https://i.imgflip.com/8fc3zv.jpg});"
+            data-size="cover;"
+            data-position="center;"
+            data-repeat="no-repeat;"
+          ></s-bg>
+        </s-box>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Background Repeat:</s-text
+          >
+        </h3>
+        <s-box
+          data-width="100px;"
+          data-height="100px;"
+          data-padding="0.5rem;"
+          data-border="var(--line-thin-2)_solid_var(--theme-1);"
+        >
+          <s-bg
+            data-image="url({https://live.mdnplay.dev/ja/docs/Web/CSS/background-repeat/starsolid.gif});"
+            data-repeat="repeat-x;"
+          ></s-bg>
+        </s-box>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Background blend mode:</s-text
+          >
+        </h3>
+        <s-flex
+          data-justify-content="center;"
+          data-gap="var(--gap-2);"
+          data-wrap="wrap;"
+        >
+          <s-flex-item>
+            <s-box
+              data-width="100px;"
+              data-height="100px;"
+              data-padding="0.5rem;"
+              data-border="var(--line-thin-2)_solid_var(--theme-1);"
+            >
+              <s-bg
+                data-image="url({https://i.imgflip.com/8fc3zv.jpg}),{linear-gradient}(135deg,_#fc466b,_#3f5efb);"
+                data-size="cover;"
+                data-position="center;"
+                data-blend-mode="color-dodge;"
+                data-repeat="no-repeat;"
+              ></s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item>
+            <s-box
+              data-width="100px;"
+              data-height="100px;"
+              data-padding="0.5rem;"
+              data-border="var(--line-thin-2)_solid_var(--theme-1);"
+            >
+              <s-bg
+                data-image="url({https://i.imgflip.com/8fc3zv.jpg}),{linear-gradient}(135deg,_#fc466b,_#3f5efb);"
+                data-size="cover;"
+                data-position="center;"
+                data-blend-mode="multiply;"
+                data-repeat="no-repeat;"
+              ></s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item>
+            <s-box
+              data-width="100px;"
+              data-height="100px;"
+              data-padding="0.5rem;"
+              data-border="var(--line-thin-2)_solid_var(--theme-1);"
+            >
+              <s-bg
+                data-image="url({https://i.imgflip.com/8fc3zv.jpg}),{linear-gradient}(135deg,_#fc466b,_#3f5efb);"
+                data-size="cover;"
+                data-position="center;"
+                data-blend-mode="luminosity;"
+                data-repeat="no-repeat;"
+              ></s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item>
+            <s-box
+              data-width="100px;"
+              data-height="100px;"
+              data-padding="0.5rem;"
+              data-border="var(--line-thin-2)_solid_var(--theme-1);"
+            >
+              <s-bg
+                data-image="url({https://i.imgflip.com/8fc3zv.jpg}),{linear-gradient}(135deg,_#fc466b,_#3f5efb);"
+                data-size="cover;"
+                data-position="center;"
+                data-blend-mode="difference;"
+                data-repeat="no-repeat;"
+              ></s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item>
+            <s-box
+              data-width="100px;"
+              data-height="100px;"
+              data-padding="0.5rem;"
+              data-border="var(--line-thin-2)_solid_var(--theme-1);"
+            >
+              <s-bg
+                data-image="url({https://i.imgflip.com/8fc3zv.jpg}),{linear-gradient}(135deg,_#fc466b,_#3f5efb);"
+                data-size="cover;"
+                data-position="center;"
+                data-blend-mode="exclusion;"
+                data-repeat="no-repeat;"
+              ></s-bg>
+            </s-box>
+          </s-flex-item>
+        </s-flex>
+      </s-grid-item>
+    </s-grid>
+    <s-box data-height="var(--p-separator-gap);"></s-box>
+    <h2 id="box">
+      <s-text
+        data-style="italic;"
+        data-color="var(--theme-2);"
+        data-size="var(--text-size-7);"
+        data-transform="uppercase;"
+        data-line-height="0.7;"
+        data-display="block;"
+        >box</s-text
+      >
+    </h2>
+    <s-grid
+      data-columns="repeat(3,1fr);"
+      data-justify-items="center;"
+      data-gap="var(--gap-4);"
+    >
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Padding:</s-text
+          >
+        </h3>
+        <s-box
+          data-width="100px;"
+          data-height="100px;"
+          data-border="var(--line-thin-2)_solid_var(--theme-1);"
+          data-position="relative;"
+        >
+          <s-bg data-image="var(--p-box-stripe);"> </s-bg>
+          <s-box
+            data-top="10px;"
+            data-right="10px;"
+            data-bottom="10px;"
+            data-left="10px;"
+            data-position="absolute;"
+          >
+            <s-bg data-color="red;"></s-bg>
+          </s-box>
+        </s-box>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Margin:</s-text
+          >
+        </h3>
+        <s-box
+          data-width="100px;"
+          data-height="100px;"
+          data-position="relative;"
+        >
+          <s-bg data-color="white;"></s-bg>
+          <s-box
+            data-top="10px;"
+            data-right="10px;"
+            data-bottom="10px;"
+            data-left="10px;"
+            data-position="absolute;"
+            data-z-index="1;"
+          ><s-bg data-image="var(--p-box-stripe);"></s-bg>
+          </s-box>
+        </s-box>
+      </s-grid-item>
+    </s-grid>
+  </body>
+</html>
