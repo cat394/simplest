@@ -41,7 +41,8 @@ const customElementSettings: CustomElementSettings = {
       'boxSizing',
       'overflow',
       'zIndex',
-      'aspectRatio'
+      'aspectRatio',
+      'resize'
     ],
   },
   layoutBox: {

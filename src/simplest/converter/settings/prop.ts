@@ -123,6 +123,7 @@ const propSettings: PropSettings = {
   overflow: {},
   zIndex: {},
   aspectRatio: {},
+  resize: {},
 
   // layoutBox
   alignContent: {},

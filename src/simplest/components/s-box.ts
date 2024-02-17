@@ -22,7 +22,8 @@ const {
   boxShadow,
   overflow,
   zIndex,
-  aspectRatio
+  aspectRatio,
+  resize
 } = styles;
 
 @customElement(tagName)
@@ -80,6 +81,9 @@ export class SBox extends SBase {
 
   @property(setConverter(aspectRatio))
   aspectRatio = '';
+
+  @property(setConverter(resize))
+  resize = '';
 
   getBaseBoxStyles(): string {
     return (

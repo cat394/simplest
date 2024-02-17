@@ -107,6 +107,7 @@ export const PROP_NAMES = [
   'overflow',
   'zIndex',
   'aspectRatio',
+  'resize',
 
   // layoutBox
   'alignContent',
