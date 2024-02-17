@@ -57,7 +57,7 @@ const customElementSettings: CustomElementSettings = {
     styles: ['alignSelf', 'order'],
   },
   flex: {
-    styles: ['flexDirection', 'flexWrap'],
+    styles: ['flexDirection', 'flexWrap', 'flexFlow'],
   },
   flexItem: {
     styles: ['flexGrow', 'flexShrink', 'flexBasis'],
