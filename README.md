@@ -765,6 +765,7 @@ Simplest utilizes [Lit](https://lit.dev/)'s attribute converter to transform att
 ## Terminology
 
 - **Simplest and Simple**
+
   We provide components starting with the `s-` prefix, and styling begins with the attributes associated with these. These attribute values are called **Simplest**, which are composed of units called **Simple**, separated by spaces. For example:
 
   ```html
@@ -776,15 +777,19 @@ Simplest utilizes [Lit](https://lit.dev/)'s attribute converter to transform att
   In this code, `"red; !hover::blue; @media(width>500px)::green;"` is Simplest, and `red;`, `!hover::blue;`, `@media(width>500px)::green;` are each Simple.
 
 - **Blocks**
+
   Simple can consist of three blocks: **STYLE**, **STATE**, and **QUERY**, each separated by `::`. In the example above, `red;` is composed solely of a STYLE block, `!hover::blue` consists of a STATE block and a STYLE block, and `@media(width>500px)::green;` is composed of a QUERY block and a STYLE block.
 
   - **STYLE Block**
+
     This block is where you write the style content, expressed in two patterns: **Single** and **Pair**. Single consists of a single configuration, like `red`, `center`, `10px`. Pair consists of a key and value, separated by `=`, used for partial styling of a property. For example, to apply style only to the top of the margin property, you would write `top=10px`.
 
   - **STATE Block**
+
     This area starts with `!` and is used to apply styles based on the state of an element. For instance, if you want to change the text color when a user hovers over an element, you would add a block like `!hover`.
 
   - **QUERY Block**
+
     This area starts with `@` and can describe CSS @rules. For example, to change styles based on the user's device width, you create a block like `@media(width>500px)`.
 
 ## Rules
@@ -792,12 +797,15 @@ Simplest utilizes [Lit](https://lit.dev/)'s attribute converter to transform att
 There are several rules for Simple:
 
 1. **End with `;`**
+
    This is to avoid parsing incomplete Simple.
 
 2. **Do not place spaces**
+
    Simplest uses spaces as separators to divide into each Simple, which are then parsed individually. Therefore, spaces within Simple are not allowed. If space is needed, use `_` instead.
 
 3. **Write each block in order**
+
    Simple is written in the order of QUERY block, STATE block, and STYLE block. This is because they form the CSS nesting structure in the order they are written.
 
 ## Introduction to Special Areas
@@ -859,6 +867,7 @@ By utilizing the Protected Area, you were able to create a region that should no
 When dealing with properties in the style area that can hold pairs of states, there are two methods to manage multiple properties within a single Simplest. The first method treats each as an individual Simple, declaring them with spaces in between. The second method involves using **Chains**, which allows for including multiple properties within a single Simple. For instance, if you wish to set both the border-width and border-color values, you could consider the following approaches:
 
 1. **As Individual Simples**
+
    This approach might feel very natural.
 
    ```html
@@ -879,6 +888,7 @@ When dealing with properties in the style area that can hold pairs of states, th
    This inefficiency can be overcome by consolidating these properties into a single Simple using Chains.
 
 2. **Using Chains**
+
    Chains allow you to express multiple properties within a single Simple by separating each property with `|`. For the example given above, you could write:
 
    ```html
@@ -956,9 +966,11 @@ Simplest performs the processing through the following three main functions:
 - generateCSS
 
 1. **simplestConverter**
+
    This function validates whether the attribute value is suitable for future processing and breaks down Simplest into each Simple. Then it passes them to the generateAST function, and then passes the returned nodes to the generateCSS function, and finally returns the CSS string as the value of the property.
 
    1. **Trimming**
+
       Extra spaces are removed.
 
       ```js
@@ -966,6 +978,7 @@ Simplest performs the processing through the following three main functions:
       ```
 
    2. **Breaking down into Simples**
+
       Simplest is divided into each Simple using spaces as separators.
 
       ```js
@@ -975,6 +988,7 @@ Simplest performs the processing through the following three main functions:
    3. **Processing Simples**
 
       1. Checking the end of Simple
+
          If it ends with `;`, it is determined as a valid Simple.
 
          ```js
@@ -983,9 +997,11 @@ Simplest performs the processing through the following three main functions:
          ```
 
       2. Processing the `_` that connects multiple values
+
          All `_` are replaced with a single space.
 
       3. Processing operators
+
          CSS variables and protected areas are placeholderized, and spaces are placed on both sides of all arithmetic operators included in Simple.
 
          ```js
@@ -993,6 +1009,7 @@ Simplest performs the processing through the following three main functions:
          ```
 
       4. Creating an Abstract Syntax Tree (AST)
+
          The Simple is converted into the following nodes by the generateAST function.
 
          ```js
@@ -1028,6 +1045,7 @@ Simplest performs the processing through the following three main functions:
          ```
 
       5. Converting AST to CSS
+
          The AST is passed to the generateCSS function along with the information called _prop_, processed, and passed as the value of the property.
 
          ```css
@@ -1040,9 +1058,11 @@ Simplest performs the processing through the following three main functions:
          ```
 
       6. Combining styles
+
          The values of each property present in the `<s-text>` element are combined and inserted into the `<style>` element within the shadow DOM during rendering.
 
 2. **generateAST**
+
    It breaks down Simples into each block and converts them into the following nodes.
 
    ```ts
@@ -1061,6 +1081,7 @@ Simplest performs the processing through the following three main functions:
    If a block starts with `@`, it is considered as a QUERY block node. If it starts with `!`, it is considered as a STATE block node. Otherwise, it is considered as a STYLE block node.
 
 3. **generateCSS**
+
    Traverse the AST and convert each block into the structure of CSS.
 
 ## Simplest's Issues and Proposed Fixes
@@ -1068,9 +1089,11 @@ Simplest performs the processing through the following three main functions:
 While the logic of Simplest is simple, there are still some points that have not yet reached practicality. However, we already have some proposed solutions to address these issues, so please take a look if you're interested.
 
 1. **Regarding Testing**
+
    As of February 14, 2024, Simplest is being developed independently and has very few tests created. Therefore, it should be noted that there is a possibility of a long road to practical implementation.
 
 2. **Inefficient CSS Generated by Multiple Attributes**
+
    By using chaining, there is no longer a need to generate the same CSS block for the same attribute. However, when multiple attributes are set in a single component, they are processed individually by the converter, resulting in the generation of duplicate CSS blocks. Let's consider the following `<s-box>` element as an example:
 
    ```html
@@ -1110,6 +1133,7 @@ While the logic of Simplest is simple, there are still some points that have not
    In situations where chaining is possible, it is always recommended to stick to this writing style.
 
 3. **Child elements cannot listen to parent element events**
+
    Currently, all styles are generated within the Shadow DOM, so child elements cannot apply styling based on the state of the parent element. This is a major factor preventing Simplest from entering practical stages. For example, let's say you want to create a link that looks like a button.
 
    ```html
@@ -1187,6 +1211,7 @@ While the logic of Simplest is simple, there are still some points that have not
    We believe that by using the `data-simplest-id` attribute in this way, we can provide highly flexible inline styling while fully utilizing the expressive power of CSS.
 
 4. **Some CSS properties are not yet supported**
+
    It will take some time to support the transform property. This is because implementing it requires additional logic to the existing Simplest processing. Our proposal is as follows.
 
    ```html
