@@ -107,12 +107,12 @@ export const PROP_NAMES = [
   'overflow',
   'zIndex',
   'aspectRatio',
+  'resize',
 
   // layoutBox
   'alignContent',
   'alignItems',
   'justifyContent',
-  'justifyItems',
   'placeContent',
   'placeItems',
   'gap',
@@ -132,6 +132,7 @@ export const PROP_NAMES = [
   'flexBasis',
 
   // grid
+  'justifyItems',
   'gridTemplateColumns',
   'gridTemplateRows',
   'gridTemplateAreas',
@@ -141,6 +142,7 @@ export const PROP_NAMES = [
 
   // gridItem
   'justifySelf',
+  'placeSelf',
   'gridColumn',
   'gridRow',
   'gridArea',
@@ -149,7 +151,7 @@ export const PROP_NAMES = [
   'filter',
   'backdropFilter',
   'opacity',
-  'blendMode',
+  'mixBlendMode',
   'clipPath',
 ] as const;
 

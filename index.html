@@ -44,11 +44,11 @@
     </script>
   </head>
   <body>
-    <s-flex data-align-items="center;" data-justify-content="space-between;">
+    <s-flex data-align-items="center;" data-justify-content="{space-between};">
       <s-flex-item>
         <h1>
           <s-text
-            data-color="var(--theme-1);"
+            data-color="var(--main-text);"
             data-size="var(--text-size-4);"
             data-shadow="var(--accent-1)_1px_0_8px;"
             >Welcome to Simplest!</s-text
@@ -56,22 +56,26 @@
         </h1>
       </s-flex-item>
       <s-flex-item>
-        <a href="./dev/index.html">
-          <s-bg data-image="var(--gradient-1);" data-clip="text;">
-            <s-text
-              data-size="var(--text-size-2);"
-              data-color="var(--p-navigation-text-color);"
-              data-decoration="none[trans(300ms,ease-in)]; !hover::var(--p-navigation-link-underline);"
-              >Develop page</s-text
-            >
-          </s-bg>
-        </a>
+        <s-box data-padding="inline-end=60px;">
+          <a href="./dev/index.html">
+            <s-bg data-image="var(--gradient-1);" data-clip="text;">
+              <s-text
+                data-size="var(--text-size-2);"
+                data-color="var(--p-navigation-text-color);"
+                data-decoration="none[trans(300ms,ease-in)]; !hover::var(--p-navigation-link-underline);"
+                >Develop page &#x2197;</s-text
+              >
+            </s-bg>
+          </a>
+        </s-box>
       </s-flex-item>
     </s-flex>
+
+    <!-- TEXT -->
     <h2 id="text">
       <s-text
         data-style="italic;"
-        data-color="var(--theme-2);"
+        data-color="var(--accent-3);"
         data-size="var(--text-size-7);"
         data-transform="uppercase;"
         data-line-height="0.7;"
@@ -82,8 +86,8 @@
     <s-grid
       data-width="90%;"
       data-margin="auto;"
-      data-columns="repeat(3,1fr);"
-      data-gap="var(--gap-4);"
+      data-columns="var(--p-main-grid);"
+      data-gap="var(--p-main-grid-gap);"
     >
       <s-grid-item>
         <h3>
@@ -93,7 +97,7 @@
             >Color:</s-text
           >
         </h3>
-        <s-text data-color="red;">Sample</s-text>
+        <s-text data-color="var(--accent-1);">Sample</s-text>
       </s-grid-item>
       <s-grid-item>
         <h3>
@@ -103,9 +107,7 @@
             >Font size:</s-text
           >
         </h3>
-        <s-text data-size="var(--text-size-5);" data-line-height="1;"
-          >Sample</s-text
-        >
+        <s-text data-size="var(--text-size-5);">Sample</s-text>
       </s-grid-item>
       <s-grid-item>
         <h3>
@@ -155,7 +157,9 @@
             >Text decoration:</s-text
           >
         </h3>
-        <s-text data-decoration="wavy_underline_lime_0.08em;">Sample</s-text>
+        <s-text data-decoration="wavy_underline_var(--accent-1)_0.08em;"
+          >Sample</s-text
+        >
       </s-grid-item>
       <s-grid-item>
         <h3>
@@ -175,7 +179,7 @@
             >Text shadow:</s-text
           >
         </h3>
-        <s-text data-shadow="red_2px_3px;">Sample</s-text>
+        <s-text data-shadow="var(--accent-1)_0px_3px;">Sample</s-text>
       </s-grid-item>
       <s-grid-item>
         <h3>
@@ -186,6 +190,17 @@
           >
         </h3>
         <s-text data-display="block;" data-align="center;">Sample</s-text>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Vertical align:</s-text
+          >
+        </h3>
+        <s-text data-size="2rem;">Hello</s-text
+        ><s-text data-vertical-align="top;">world</s-text>
       </s-grid-item>
       <s-grid-item>
         <h3>
@@ -219,10 +234,12 @@
       </s-grid-item>
     </s-grid>
     <s-box data-height="var(--p-separator-gap);"></s-box>
+
+    <!-- BACKGROUND -->
     <h2 id="background">
       <s-text
         data-style="italic;"
-        data-color="var(--theme-2);"
+        data-color="var(--accent-3);"
         data-size="var(--text-size-7);"
         data-transform="uppercase;"
         data-line-height="0.7;"
@@ -231,9 +248,9 @@
       >
     </h2>
     <s-grid
-      data-columns="repeat(3,1fr);"
+      data-columns="var(--p-main-grid);"
       data-justify-items="center;"
-      data-gap="var(--gap-4);"
+      data-gap="var(--p-main-grid-gap);"
     >
       <s-grid-item>
         <h3>
@@ -244,12 +261,12 @@
           >
         </h3>
         <s-box
-          data-width="100px;"
-          data-height="100px;"
+          data-width="var(--p-box-size);"
+          data-height="var(--p-box-size);"
           data-padding="0.5rem;"
-          data-border="var(--line-thin-2)_solid_var(--theme-1);"
+          data-border="var(--line-thin-2)_solid_var(--main-text);"
         >
-          <s-bg data-color="red;"></s-bg>
+          <s-bg data-color="var(--accent-1);"></s-bg>
         </s-box>
       </s-grid-item>
       <s-grid-item>
@@ -261,10 +278,10 @@
           >
         </h3>
         <s-box
-          data-width="100px;"
-          data-height="100px;"
+          data-width="var(--p-box-size);"
+          data-height="var(--p-box-size);"
           data-padding="0.5rem;"
-          data-border="var(--line-thin-2)_solid_var(--theme-1);"
+          data-border="var(--line-thin-2)_solid_var(--main-text);"
         >
           <s-bg
             data-image="{linear-gradient}(135deg,_#fc466b,_#3f5efb);"
@@ -280,10 +297,10 @@
           >
         </h3>
         <s-box
-          data-width="100px;"
-          data-height="100px;"
+          data-width="var(--p-box-size);"
+          data-height="var(--p-box-size);"
           data-padding="0.5rem;"
-          data-border="var(--line-thin-2)_solid_var(--theme-1);"
+          data-border="var(--line-thin-2)_solid_var(--main-text);"
         >
           <s-bg
             data-image="url({https://i.imgflip.com/8fc3zv.jpg});"
@@ -300,10 +317,10 @@
           >
         </h3>
         <s-box
-          data-width="100px;"
-          data-height="100px;"
+          data-width="var(--p-box-size);"
+          data-height="var(--p-box-size);"
           data-padding="0.5rem;"
-          data-border="var(--line-thin-2)_solid_var(--theme-1);"
+          data-border="var(--line-thin-2)_solid_var(--main-text);"
         >
           <s-bg
             data-image="url({https://i.imgflip.com/8fc3zv.jpg});"
@@ -322,10 +339,10 @@
           >
         </h3>
         <s-box
-          data-width="100px;"
-          data-height="100px;"
+          data-width="var(--p-box-size);"
+          data-height="var(--p-box-size);"
           data-padding="0.5rem;"
-          data-border="var(--line-thin-2)_solid_var(--theme-1);"
+          data-border="var(--line-thin-2)_solid_var(--main-text);"
         >
           <s-bg
             data-image="url({https://live.mdnplay.dev/ja/docs/Web/CSS/background-repeat/starsolid.gif});"
@@ -348,10 +365,10 @@
         >
           <s-flex-item>
             <s-box
-              data-width="100px;"
-              data-height="100px;"
+              data-width="var(--p-box-size);"
+              data-height="var(--p-box-size);"
               data-padding="0.5rem;"
-              data-border="var(--line-thin-2)_solid_var(--theme-1);"
+              data-border="var(--line-thin-2)_solid_var(--main-text);"
             >
               <s-bg
                 data-image="url({https://i.imgflip.com/8fc3zv.jpg}),{linear-gradient}(135deg,_#fc466b,_#3f5efb);"
@@ -364,10 +381,10 @@
           </s-flex-item>
           <s-flex-item>
             <s-box
-              data-width="100px;"
-              data-height="100px;"
+              data-width="var(--p-box-size);"
+              data-height="var(--p-box-size);"
               data-padding="0.5rem;"
-              data-border="var(--line-thin-2)_solid_var(--theme-1);"
+              data-border="var(--line-thin-2)_solid_var(--main-text);"
             >
               <s-bg
                 data-image="url({https://i.imgflip.com/8fc3zv.jpg}),{linear-gradient}(135deg,_#fc466b,_#3f5efb);"
@@ -380,10 +397,10 @@
           </s-flex-item>
           <s-flex-item>
             <s-box
-              data-width="100px;"
-              data-height="100px;"
+              data-width="var(--p-box-size);"
+              data-height="var(--p-box-size);"
               data-padding="0.5rem;"
-              data-border="var(--line-thin-2)_solid_var(--theme-1);"
+              data-border="var(--line-thin-2)_solid_var(--main-text);"
             >
               <s-bg
                 data-image="url({https://i.imgflip.com/8fc3zv.jpg}),{linear-gradient}(135deg,_#fc466b,_#3f5efb);"
@@ -396,10 +413,10 @@
           </s-flex-item>
           <s-flex-item>
             <s-box
-              data-width="100px;"
-              data-height="100px;"
+              data-width="var(--p-box-size);"
+              data-height="var(--p-box-size);"
               data-padding="0.5rem;"
-              data-border="var(--line-thin-2)_solid_var(--theme-1);"
+              data-border="var(--line-thin-2)_solid_var(--main-text);"
             >
               <s-bg
                 data-image="url({https://i.imgflip.com/8fc3zv.jpg}),{linear-gradient}(135deg,_#fc466b,_#3f5efb);"
@@ -412,10 +429,10 @@
           </s-flex-item>
           <s-flex-item>
             <s-box
-              data-width="100px;"
-              data-height="100px;"
+              data-width="var(--p-box-size);"
+              data-height="var(--p-box-size);"
               data-padding="0.5rem;"
-              data-border="var(--line-thin-2)_solid_var(--theme-1);"
+              data-border="var(--line-thin-2)_solid_var(--main-text);"
             >
               <s-bg
                 data-image="url({https://i.imgflip.com/8fc3zv.jpg}),{linear-gradient}(135deg,_#fc466b,_#3f5efb);"
@@ -430,10 +447,12 @@
       </s-grid-item>
     </s-grid>
     <s-box data-height="var(--p-separator-gap);"></s-box>
+
+    <!-- BOX -->
     <h2 id="box">
       <s-text
         data-style="italic;"
-        data-color="var(--theme-2);"
+        data-color="var(--accent-3);"
         data-size="var(--text-size-7);"
         data-transform="uppercase;"
         data-line-height="0.7;"
@@ -442,9 +461,9 @@
       >
     </h2>
     <s-grid
-      data-columns="repeat(3,1fr);"
+      data-columns="var(--p-main-grid);"
       data-justify-items="center;"
-      data-gap="var(--gap-4);"
+      data-gap="var(--p-main-grid-gap);"
     >
       <s-grid-item>
         <h3>
@@ -454,22 +473,19 @@
             >Padding:</s-text
           >
         </h3>
-        <s-box
-          data-width="100px;"
-          data-height="100px;"
-          data-border="var(--line-thin-2)_solid_var(--theme-1);"
-          data-position="relative;"
-        >
-          <s-bg data-image="var(--p-box-stripe);"> </s-bg>
-          <s-box
-            data-top="10px;"
-            data-right="10px;"
-            data-bottom="10px;"
-            data-left="10px;"
-            data-position="absolute;"
-          >
-            <s-bg data-color="red;"></s-bg>
-          </s-box>
+        <s-box data-width="var(--p-box-size);" data-height="var(--p-box-size);">
+          <s-bg data-image="var(--p-box-stripe);" data-repeat="no-repeat;">
+            <s-box
+              data-width="var(--p-box-size);"
+              data-height="var(--p-box-size);"
+              data-border="var(--line-thin-3)_solid_var(--theme-2);"
+              data-padding="10px;"
+            >
+              <s-box data-height="100%;">
+                <s-bg data-color="var(--main-text);"></s-bg>
+              </s-box>
+            </s-box>
+          </s-bg>
         </s-box>
       </s-grid-item>
       <s-grid-item>
@@ -480,22 +496,1199 @@
             >Margin:</s-text
           >
         </h3>
+        <s-box data-width="var(--p-box-size);" data-height="var(--p-box-size);">
+          <s-bg data-image="var(--p-box-stripe);" data-repeat="no-repeat;">
+            <s-box
+              data-width="var(--p-box-size);"
+              data-height="var(--p-box-size);"
+              data-padding="10px;"
+            >
+              <s-box
+                data-height="100%;"
+                data-border="var(--line-thin-3)_solid_var(--theme-2);"
+              >
+                <s-bg data-color="var(--main-text);"></s-bg>
+              </s-box>
+            </s-box>
+          </s-bg>
+        </s-box>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Border:</s-text
+          >
+        </h3>
         <s-box
-          data-width="100px;"
-          data-height="100px;"
+          data-width="var(--p-box-size);"
+          data-height="var(--p-box-size);"
           data-position="relative;"
         >
           <s-bg data-color="white;"></s-bg>
           <s-box
-            data-top="10px;"
-            data-right="10px;"
-            data-bottom="10px;"
-            data-left="10px;"
+            data-inset="10px;"
             data-position="absolute;"
-            data-z-index="1;"
-          ><s-bg data-image="var(--p-box-stripe);"></s-bg>
+            data-border="var(--line-thin-3)_solid_var(--theme-1);"
+          >
           </s-box>
         </s-box>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Position:</s-text
+          >
+        </h3>
+        <s-box
+          data-width="var(--p-box-size);"
+          data-height="var(--p-box-size);"
+          data-position="relative;"
+          ><s-bg data-color="var(--main-text);"></s-bg>
+          <s-box
+            data-top="0;"
+            data-left="0;"
+            data-width="calc(var(--p-box-size)/1.5);"
+            data-height="calc(var(--p-box-size)/1.5);"
+            data-position="absolute;"
+            data-z-index="1;"
+          >
+            <s-bg data-color="var(--theme-1);"></s-bg>
+          </s-box>
+          <s-box
+            data-right="0;"
+            data-bottom="0;"
+            data-width="calc(var(--p-box-size)/1.5);"
+            data-height="calc(var(--p-box-size)/1.5);"
+            data-position="absolute;"
+          >
+            <s-bg data-color="var(--theme-2);"></s-bg>
+          </s-box>
+        </s-box>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Aspect ratio:</s-text
+          >
+        </h3>
+        <s-box data-width="100%;" data-aspect-ratio="var(--p-container-ratio);"
+          ><s-bg data-image="var(--p-box-stripe);">
+            <s-flex
+              data-height="100%;"
+              data-justify-content="center;"
+              data-align-items="center;"
+            >
+              <s-box data-padding="0.2rem;">
+                <s-text
+                  data-color="var(--main-text);"
+                  data-shadow="var(--theme-2)_3px_3px_3px;"
+                  data-weight="bold;"
+                  data-size="var(--text-size-4);"
+                  >16:9</s-text
+                >
+              </s-box>
+            </s-flex>
+          </s-bg>
+        </s-box>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Box shadow:</s-text
+          >
+        </h3>
+        <s-box
+          data-width="var(--p-box-size);"
+          data-height="var(--p-box-size);"
+          data-shadow="7px_7px_10px_var(--theme-1);"
+        >
+          <s-bg data-color="var(--main-text);"></s-bg>
+        </s-box>
+      </s-grid-item>
+    </s-grid>
+    <s-box data-height="var(--p-separator-gap);"></s-box>
+
+    <!-- FLEX -->
+    <h2 id="flex">
+      <s-text
+        data-style="italic;"
+        data-color="var(--accent-3);"
+        data-size="var(--text-size-7);"
+        data-transform="uppercase;"
+        data-line-height="0.7;"
+        data-display="block;"
+        >flex</s-text
+      >
+    </h2>
+    <s-grid
+      data-columns="var(--p-main-grid);"
+      data-justify-items="center;"
+      data-gap="var(--p-main-grid-gap);"
+    >
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Justify content:</s-text
+          >
+        </h3>
+        <s-flex
+          data-width="100%;"
+          data-aspect-ratio="var(--p-container-ratio);"
+          data-border="var(--line-thin-2)_dashed_var(--main-text);"
+          data-gap="var(--gap-2);"
+          data-justify-content="center;"
+        >
+          <s-flex-item>
+            <s-box>
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 1</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item>
+            <s-box>
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 2</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+        </s-flex>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Align content:</s-text
+          >
+        </h3>
+        <s-flex
+          data-width="100%|max=300px;"
+          data-aspect-ratio="var(--p-container-ratio);"
+          data-border="var(--line-thin-2)_dashed_var(--main-text);"
+          data-gap="column=var(--gap-2);"
+          data-align-content="center;"
+          data-wrap="wrap;"
+        >
+          <s-flex-item>
+            <s-box>
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 1</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item>
+            <s-box>
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 2</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item>
+            <s-box>
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 3</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item>
+            <s-box>
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 4</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+        </s-flex>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Align items:</s-text
+          >
+        </h3>
+        <s-flex
+          data-width="100%|max=300px;"
+          data-aspect-ratio="var(--p-container-ratio);"
+          data-border="var(--line-thin-2)_dashed_var(--main-text);"
+          data-gap="column=var(--gap-2);"
+          data-align-items="center;"
+          data-wrap="wrap;"
+        >
+          <s-flex-item>
+            <s-box>
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 1</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item>
+            <s-box>
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 2</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item>
+            <s-box>
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 3</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item>
+            <s-box>
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 4</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+        </s-flex>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Align self:</s-text
+          >
+        </h3>
+        <s-flex
+          data-width="100%;"
+          data-aspect-ratio="var(--p-container-ratio);"
+          data-border="var(--line-thin-2)_dashed_var(--main-text);"
+          data-gap="var(--gap-2);"
+        >
+          <s-flex-item>
+            <s-box>
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 1</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item data-align-self="center;">
+            <s-box>
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 2</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item data-align-self="end;">
+            <s-box>
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 3</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+        </s-flex>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Flex direction:</s-text
+          >
+        </h3>
+        <s-flex
+          data-width="100%;"
+          data-aspect-ratio="var(--p-container-ratio);"
+          data-border="var(--line-thin-2)_dashed_var(--main-text);"
+          data-gap="var(--gap-2);"
+          data-direction="column;"
+          data-align-items="center;"
+          data-justify-content="start;"
+        >
+          <s-flex-item>
+            <s-box>
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 1</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item>
+            <s-box>
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 2</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+        </s-flex>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Flex wrap:</s-text
+          >
+        </h3>
+        <s-flex
+          data-width="100%|max=300px;"
+          data-aspect-ratio="var(--p-container-ratio);"
+          data-border="var(--line-thin-2)_dashed_var(--main-text);"
+          data-gap="var(--gap-2);"
+          data-wrap="{wrap-reverse};"
+        >
+          <s-flex-item>
+            <s-box data-display="{inline-block};">
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 1</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item>
+            <s-box data-display="{inline-block};">
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 2</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item>
+            <s-box data-display="{inline-block};">
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 3</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item>
+            <s-box data-display="{inline-block};">
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 4</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+        </s-flex>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Order:</s-text
+          >
+        </h3>
+        <s-flex
+          data-width="100%|max=300px;"
+          data-aspect-ratio="var(--p-container-ratio);"
+          data-border="var(--line-thin-2)_dashed_var(--main-text);"
+          data-gap="var(--gap-2);"
+        >
+          <s-flex-item>
+            <s-box data-display="{inline-block};">
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 1</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item>
+            <s-box data-display="{inline-block};">
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 2</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+          <s-flex-item data-order="{-1};">
+            <s-box data-display="{inline-block};">
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 3</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-flex-item>
+        </s-flex>
+      </s-grid-item>
+    </s-grid>
+
+    <!-- GRID -->
+    <s-box data-height="var(--p-separator-gap);"></s-box>
+    <h2 id="grid">
+      <s-text
+        data-style="italic;"
+        data-color="var(--accent-3);"
+        data-size="var(--text-size-7);"
+        data-transform="uppercase;"
+        data-line-height="0.7;"
+        data-display="block;"
+        >grid</s-text
+      >
+    </h2>
+    <s-grid
+      data-columns="var(--p-main-grid);"
+      data-justify-items="center;"
+      data-gap="var(--p-main-grid-gap);"
+    >
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Justify items:</s-text
+          >
+        </h3>
+        <s-grid
+          data-width="calc(100%+45px);"
+          data-aspect-ratio="var(--p-container-ratio);"
+          data-border="var(--line-thin-2)_dashed_var(--main-text);"
+          data-columns="repeat(3,1fr);"
+          data-justify-items="end;"
+        >
+          <s-grid-item>
+            <s-box>
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 1</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box>
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 2</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box>
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 3</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+        </s-grid>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Justify self:</s-text
+          >
+        </h3>
+        <s-grid
+          data-width="calc(100%+50px)|max=300px;"
+          data-aspect-ratio="var(--p-container-ratio);"
+          data-border="var(--line-thin-2)_dashed_var(--main-text);"
+          data-columns="repeat(3,1fr);"
+          data-justify-items="end;"
+        >
+          <s-grid-item>
+            <s-box>
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 1</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item data-justify-self="start;">
+            <s-box>
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 2</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box>
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 3</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+        </s-grid>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Grid template columns:</s-text
+          >
+        </h3>
+        <s-grid
+          data-width="100%|max=300px;"
+          data-aspect-ratio="var(--p-container-ratio);"
+          data-border="var(--line-thin-2)_dashed_var(--main-text);"
+          data-columns="1fr_2fr_1fr;"
+        >
+          <s-grid-item>
+            <s-box>
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 1</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box>
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 2</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box>
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 3</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+        </s-grid>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Grid template rows:</s-text
+          >
+        </h3>
+        <s-grid
+          data-width="100%|max=300px;"
+          data-border="var(--line-thin-2)_dashed_var(--main-text);"
+          data-rows="1fr_2fr_1fr;"
+        >
+          <s-grid-item>
+            <s-box data-display="{inline-block};">
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 1</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box data-display="{inline-block};" data-height="100%;">
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 2</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box data-display="{inline-block};">
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 3</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+        </s-grid>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Grid template areas:</s-text
+          >
+        </h3>
+        <s-grid
+          data-width="500px|max=300px;"
+          data-border="var(--line-thin-2)_dashed_var(--main-text);"
+          data-areas='"head_head_head""nav_main_main""foot_foot_foot";'
+        >
+          <s-grid-item data-area="head;">
+            <s-box>
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">Head</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item data-area="nav;">
+            <s-box
+              data-border="bottom=var(--line-thin-1)_solid_var(--main-text);"
+            >
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">Nav</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item data-area="main;">
+            <s-box
+              data-border="bottom=var(--line-thin-1)_solid_var(--main-text);"
+            >
+              <s-bg data-color="var(--accent-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">Main</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item data-area="foot;">
+            <s-box>
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">Foot</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+        </s-grid>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Grid auto columns:</s-text
+          >
+        </h3>
+        <s-grid
+          data-width="100%|max=300px;"
+          data-aspect-ratio="var(--p-container-ratio);"
+          data-border="var(--line-thin-2)_dashed_var(--main-text);"
+          data-columns="auto_auto;"
+          data-auto-columns="1fr;"
+        >
+          <s-grid-item>
+            <s-box data-height="100%;">
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 1</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box data-height="100%;">
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 2</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item data-column="3/4;" data-row="2/3;">
+            <s-box data-height="100%;">
+              <s-bg data-color="var(--accent-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);"
+                    >implicit track</s-text
+                  >
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+        </s-grid>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Grid auto rows:</s-text
+          >
+        </h3>
+        <s-grid
+          data-width="100%|max=320px;"
+          data-aspect-ratio="var(--p-container-ratio);"
+          data-border="var(--line-thin-2)_dashed_var(--main-text);"
+          data-columns="auto_auto;"
+          data-auto-rows="130px;"
+        >
+          <s-grid-item>
+            <s-box data-height="100%;">
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 1</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box data-height="100%;">
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 2</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item data-row="2/3;">
+            <s-box data-height="100%;">
+              <s-bg data-color="var(--accent-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);"
+                    >implicit track</s-text
+                  >
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+        </s-grid>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Grid auto flow:</s-text
+          >
+        </h3>
+        <s-grid
+          data-width="100%;"
+          data-aspect-ratio="var(--p-container-ratio);"
+          data-border="var(--line-thin-2)_dashed_var(--main-text);"
+          data-areas='"item1_item1_.""._item2_item2";'
+          data-auto-flow="column_dense;"
+        >
+          <s-grid-item data-area="item1;">
+            <s-box data-height="100%;">
+              <s-bg data-color="var(--theme-2);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 1</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item data-area="item2;">
+            <s-box data-height="100%;">
+              <s-bg data-color="var(--theme-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);">item 2</s-text>
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box data-height="100%;">
+              <s-bg data-color="var(--accent-1);">
+                <s-box data-padding="var(--gap-1);">
+                  <s-text data-size="var(--text-size-1);"
+                    >implicit track</s-text
+                  >
+                </s-box>
+              </s-bg>
+            </s-box>
+          </s-grid-item>
+        </s-grid>
+      </s-grid-item>
+    </s-grid>
+    <s-box data-height="var(--p-separator-gap);"></s-box>
+    <h2 id="Effect">
+      <s-text
+        data-style="italic;"
+        data-color="var(--accent-3);"
+        data-size="var(--text-size-7);"
+        data-transform="uppercase;"
+        data-line-height="0.7;"
+        data-display="block;"
+        >effect</s-text
+      >
+    </h2>
+    <s-grid
+      data-columns="var(--p-main-grid);"
+      data-justify-items="center;"
+      data-gap="var(--p-main-grid-gap);"
+    >
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Opacity:</s-text
+          >
+        </h3>
+        <s-box data-display="{inline-block};">
+          <s-effect data-opacity="[trans(500ms,ease-in)]; !hover::0;">
+            <img
+              src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+              width="150"
+            />
+          </s-effect>
+          <s-text data-display="block;">Hover me!</s-text>
+        </s-box>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Filter:</s-text
+          >
+        </h3>
+        <s-grid data-columns="1fr_1fr_1fr;">
+          <s-grid-item>
+            <s-effect data-filter="{hue-rotate}(115deg);">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+            </s-effect>
+          </s-grid-item>
+          <s-grid-item>
+            <s-effect data-filter="contrast(30%);">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+            </s-effect>
+          </s-grid-item>
+          <s-grid-item>
+            <s-effect data-filter="sepia(80%);">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+            </s-effect>
+          </s-grid-item>
+          <s-grid-item>
+            <s-effect data-filter="brightness(2);">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+            </s-effect>
+          </s-grid-item>
+          <s-grid-item>
+            <s-effect data-filter="grayscale(80%);">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+            </s-effect>
+          </s-grid-item>
+          <s-grid-item>
+            <s-effect data-filter="saturate(180%);">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+            </s-effect>
+          </s-grid-item>
+          <s-grid-item>
+            <s-effect data-filter="blur(3px);">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+            </s-effect>
+          </s-grid-item>
+        </s-grid>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Backdrop filter:</s-text
+          >
+        </h3>
+        <s-grid data-columns="1fr_1fr_1fr;">
+          <s-grid-item>
+            <s-box data-position="relative;">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+              <s-box
+                data-width="100%;"
+                data-top="50%;"
+                data-left="0;"
+                data-position="absolute;"
+              >
+                <s-effect
+                  data-display="block;"
+                  data-backdrop-filter="{hue-rotate}(115deg);"
+                >
+                  <s-box data-height="20px;"></s-box>
+                </s-effect>
+              </s-box>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box data-position="relative;">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+              <s-box
+                data-width="100%;"
+                data-top="50%;"
+                data-left="0;"
+                data-position="absolute;"
+              >
+                <s-effect
+                  data-display="block;"
+                  data-backdrop-filter="contrast(30%);"
+                >
+                  <s-box data-height="20px;"></s-box>
+                </s-effect>
+              </s-box>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box data-position="relative;">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+              <s-box
+                data-width="100%;"
+                data-top="50%;"
+                data-left="0;"
+                data-position="absolute;"
+              >
+                <s-effect
+                  data-display="block;"
+                  data-backdrop-filter="sepia(80%);"
+                >
+                  <s-box data-height="20px;"></s-box>
+                </s-effect>
+              </s-box>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box data-position="relative;">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+              <s-box
+                data-width="100%;"
+                data-top="50%;"
+                data-left="0;"
+                data-position="absolute;"
+              >
+                <s-effect
+                  data-display="block;"
+                  data-backdrop-filter="brightness(2);"
+                >
+                  <s-box data-height="20px;"></s-box>
+                </s-effect>
+              </s-box>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box data-position="relative;">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+              <s-box
+                data-width="100%;"
+                data-top="50%;"
+                data-left="0;"
+                data-position="absolute;"
+              >
+                <s-effect
+                  data-display="block;"
+                  data-backdrop-filter="grayscale(80%);"
+                >
+                  <s-box data-height="20px;"></s-box>
+                </s-effect>
+              </s-box>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box data-position="relative;">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+              <s-box
+                data-width="100%;"
+                data-top="50%;"
+                data-left="0;"
+                data-position="absolute;"
+              >
+                <s-effect
+                  data-display="block;"
+                  data-backdrop-filter="saturate(300%);"
+                >
+                  <s-box data-height="20px;"></s-box>
+                </s-effect>
+              </s-box>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box data-position="relative;">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+              <s-box
+                data-width="100%;"
+                data-top="50%;"
+                data-left="0;"
+                data-position="absolute;"
+              >
+                <s-effect
+                  data-display="block;"
+                  data-backdrop-filter="blur(3px);"
+                >
+                  <s-box data-height="20px;"></s-box>
+                </s-effect>
+              </s-box>
+            </s-box>
+          </s-grid-item>
+        </s-grid>
+      </s-grid-item>
+      <s-grid-item>
+        <h3>
+          <s-text
+            data-size="var(--text-size-3);"
+            data-shadow="var(--p-property-name-shadow);"
+            >Mix blend mode:</s-text
+          >
+        </h3>
+        <s-grid data-columns="1fr_1fr_1fr;">
+          <s-grid-item>
+            <s-box data-position="relative;">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+              <s-box data-inset="0;" data-position="absolute;">
+                <s-effect
+                  data-display="block;"
+                  data-mix-blend-mode="{hard-light};"
+                >
+                  <s-bg data-image="var(--gradient-2);"></s-bg>
+                </s-effect>
+              </s-box>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box data-position="relative;">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+              <s-box data-inset="0;" data-position="absolute;">
+                <s-effect
+                  data-display="block;"
+                  data-mix-blend-mode="overlay;"
+                >
+                  <s-bg data-image="var(--gradient-2);"></s-bg>
+                </s-effect>
+              </s-box>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box data-position="relative;">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+              <s-box data-inset="0;" data-position="absolute;">
+                <s-effect
+                  data-display="block;"
+                  data-mix-blend-mode="{color-dodge};"
+                >
+                  <s-bg data-image="var(--gradient-2);"></s-bg>
+                </s-effect>
+              </s-box>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box data-position="relative;">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+              <s-box data-inset="0;" data-position="absolute;">
+                <s-effect
+                  data-display="block;"
+                  data-mix-blend-mode="exclusion;"
+                >
+                  <s-bg data-image="var(--gradient-2);"></s-bg>
+                </s-effect>
+              </s-box>
+            </s-box>
+          </s-grid-item>
+          <s-grid-item>
+            <s-box data-position="relative;">
+              <img
+                src="https://media.tenor.com/sfXcvZAuxpEAAAAi/hatsune-miku-vocaloid.gif"
+                width="100"
+              />
+              <s-box data-inset="0;" data-position="absolute;">
+                <s-effect
+                  data-display="block;"
+                  data-mix-blend-mode="hue;"
+                >
+                  <s-bg data-image="var(--gradient-2);"></s-bg>
+                </s-effect>
+              </s-box>
+            </s-box>
+          </s-grid-item>
+        </s-grid>
       </s-grid-item>
     </s-grid>
   </body>

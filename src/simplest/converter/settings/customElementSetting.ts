@@ -41,29 +41,25 @@ const customElementSettings: CustomElementSettings = {
       'boxSizing',
       'overflow',
       'zIndex',
-      'aspectRatio'
+      'aspectRatio',
+      'resize',
     ],
   },
   layoutBox: {
-    styles: [
-      'alignContent',
-      'alignItems',
-      'justifyContent',
-      'justifyItems',
-      'gap',
-    ],
+    styles: ['alignContent', 'alignItems', 'justifyContent', 'placeContent', 'gap'],
   },
   layoutItem: {
     styles: ['alignSelf', 'order'],
   },
   flex: {
-    styles: ['flexDirection', 'flexWrap'],
+    styles: ['flexDirection', 'flexWrap', 'flexFlow'],
   },
   flexItem: {
     styles: ['flexGrow', 'flexShrink', 'flexBasis'],
   },
   grid: {
     styles: [
+      'justifyItems',
       'gridTemplateColumns',
       'gridTemplateRows',
       'gridTemplateAreas',
@@ -73,7 +69,7 @@ const customElementSettings: CustomElementSettings = {
     ],
   },
   gridItem: {
-    styles: ['justifySelf', 'gridColumn', 'gridRow', 'gridArea'],
+    styles: ['justifySelf', 'placeSelf', 'gridColumn', 'gridRow', 'gridArea'],
   },
   text: {
     styles: [
@@ -91,7 +87,7 @@ const customElementSettings: CustomElementSettings = {
       'wordSpacing',
       'writingMode',
       'wordBreak',
-      'verticalAlign'
+      'verticalAlign',
     ],
   },
   bg: {
@@ -107,14 +103,8 @@ const customElementSettings: CustomElementSettings = {
     ],
   },
   effect: {
-    styles: [
-      'opacity',
-      'filter',
-      'backdropFilter',
-      'blendMode',
-      'clipPath'
-    ],
-  }
+    styles: ['opacity', 'filter', 'backdropFilter', 'mixBlendMode', 'clipPath'],
+  },
 };
 
 const transformOptions: OptionsTransformer<
