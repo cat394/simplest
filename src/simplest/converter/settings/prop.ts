@@ -129,7 +129,6 @@ const propSettings: PropSettings = {
   alignContent: {},
   alignItems: {},
   justifyContent: {},
-  justifyItems: {},
   placeContent: {},
   placeItems: {},
   gap: {
@@ -163,6 +162,7 @@ const propSettings: PropSettings = {
   },
 
   // grid
+  justifyItems: {},
   gridTemplateColumns: {
     attrName: 'columns',
   },
@@ -184,6 +184,7 @@ const propSettings: PropSettings = {
 
   // gridItem
   justifySelf: {},
+  placeSelf: {},
   gridColumn: {
     attrName: 'column',
   },
@@ -198,7 +199,7 @@ const propSettings: PropSettings = {
   opacity: {},
   filter: {},
   backdropFilter: {},
-  blendMode: {},
+  mixBlendMode: {},
   clipPath: {},
 };
 

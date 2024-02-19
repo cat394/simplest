@@ -4,7 +4,7 @@ import {setConverter} from '../converter';
 import {SBox} from './s-box';
 
 const {styles} = CUSTOM_ELEMENT_SETTINGS.layoutBox;
-const {alignContent, alignItems, justifyContent, justifyItems, gap} = styles;
+const {alignContent, alignItems, justifyContent, placeContent, gap} = styles;
 
 export class SLayoutBox extends SBox {
   @property(setConverter(alignContent))
@@ -16,8 +16,8 @@ export class SLayoutBox extends SBox {
   @property(setConverter(justifyContent))
   justifyContent = '';
 
-  @property(setConverter(justifyItems))
-  justifyItems = '';
+  @property(setConverter(placeContent))
+  placeContent = '';
 
   @property(setConverter(gap))
   gap = '';
@@ -29,7 +29,7 @@ export class SLayoutBox extends SBox {
         this.alignContent,
         this.alignItems,
         this.justifyContent,
-        this.justifyItems,
+        this.placeContent,
         this.gap,
       ])
     );

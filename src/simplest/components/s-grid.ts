@@ -5,6 +5,7 @@ import {SLayoutBox} from './s-layout-box';
 
 const {tagName, styles} = CUSTOM_ELEMENT_SETTINGS.grid;
 const {
+  justifyItems,
   gridTemplateColumns,
   gridTemplateRows,
   gridTemplateAreas,
@@ -15,6 +16,9 @@ const {
 
 @customElement(tagName)
 export class SGrid extends SLayoutBox {
+  @property(setConverter(justifyItems))
+  justifyItems = '';
+
   @property(setConverter(gridTemplateColumns))
   gridTemplateColumns = '';
 
@@ -38,6 +42,7 @@ export class SGrid extends SLayoutBox {
       super.getLayoutBoxStyles() +
       super.addDefaultStyles({display: 'grid'}) +
       super.combineStyles([
+        this.justifyItems,
         this.gridTemplateColumns,
         this.gridTemplateRows,
         this.gridTemplateAreas,
