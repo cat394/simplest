@@ -1,17 +1,11 @@
 # Simplest
 
-Powerful inline styling with Web components
-
-> [!CAUTION]
-> Simplest is not yet ready for production use. If you want to try this out, you can download it and play with it by editing `index.html` using the command below.
-
-```bash
-npm i
-npm run serve
-```
-
 <details>
 <summary>Japanese ver.</summary>
+
+> [!CAUSION]
+> はじめに、私はこのプロジェクトはアイデアをとても気に入っています。しかしこれは駄作でした。そのため、私はこれを今後開発し続けることはありません。
+> もしかすると、私と同じような考えを持ち、同じような困難に陥る開発者がいるかもしれないので私はできるだけ親切かつ詳しく説明することを心掛けたのでよければご覧ください。
 
 ## ウェブコンポーネントによる強力なインラインスタイリング
 
@@ -63,14 +57,14 @@ Simplest は [Lit](https://lit.dev) の属性コンバーターを利用して�
 Simple にはいくつかのルールがあります。
 
 1. **`;`で終わらせる**
-   
+
    これは未完成の Simple を解析することを避けるためです。
 
 2. **空白を置かない**
 
    Simplest はスペースをセパレーターとして各 Simple に分割され、その後、各 Simple がそれぞれ解析されます。そのため、Simple 内に空白を置くことはできません。もし空白が必要な場合は、`_`を利用してください。
 
-4. **各ブロックは順番通りに書きます**
+3. **各ブロックは順番通りに書きます**
 
    Simple は QUERY ブロック、STATE ブロック、STYLE ブロックの順で書きます。なぜなら、これらは書かれた順番で CSS のネスト構造を形成するからです。
 
@@ -133,7 +127,7 @@ Simple には`Simpleエリア`という特別な領域を追加することが�
 スタイルエリアがペアの状態を持つことができるプロパティであるとき、1 つの Simplest の中で複数のプロパティを扱う方法は 2 つあります。1 つ目は、それぞれを個別の Simple とするケースで、それぞれをスペース区切りで宣言します。2 つ目は、**チェーン**を利用する場合であり、これは複数のプロパティを単一の Simple に含めることができます。例えば、border-width と border-color の値を設定したい場合を考えます。
 
 1. **個別の Simple とする**
-   
+
    おそらく、このアプローチはとても自然に感じられることでしょう。
 
    ```html
@@ -153,7 +147,7 @@ Simple には`Simpleエリア`という特別な領域を追加することが�
 
    これは非効率であり、これらのプロパティを単一の Simple に収めることで同じ CSS ブロック内に宣言させることができます。そこで使用するのがチェーンです。
 
-3. **チェーンを使う**
+2. **チェーンを使う**
 
    チェーンは各プロパティを`|`で分割することで単一の Simple として表現することができる方法です。上記の例の場合、以下のようなコードを記述することができます。
 
@@ -552,6 +546,7 @@ Simplest のロジックは単純ですが、まだ実用までには至らな�
   | `data-overflow`    | `overflow`     |
   | `data-z-index`     | `z-index`      |
   | `data-aspectRatio` | `aspect-ratio` |
+  | `data-resize`      | `resize`       |
 
 - **layoutBox (`data-flex`と`s-grid`コンポーネントで継承されている)**
 
@@ -604,6 +599,7 @@ Simplest のロジックは単純ですが、まだ実用までには至らな�
     | 属性                | CSS プロパティ |
     | ------------------- | -------------- |
     | `data-justify-self` | `justify-self` |
+    | `data-place-self`   | `place-self`   |
     | `data-column`       | `grid-column`  |
     | `data-row`          | `grid-row`     |
     | `data-area`         | `grid-area`    |
@@ -696,65 +692,24 @@ Simplest のロジックは単純ですが、まだ実用までには至らな�
   </s-effect>
   ```
 
-## 貢献方法
-
-私たちのプロジェクトへの興味と貢献を考えてくれてありがとうございます！このセクションでは、どのようにして貢献できるか、そしてそのプロセスがどのように進むかについて説明します。
-
-### 貢献のやり方
-
-- **バグ報告**：プロジェクトを使用中にバグを見つけた場合は、[Issue を作成](https://github.com/cat394/simplest/issues)して報告してください。
-- **機能提案**：新しい機能のアイデアがある場合は、まず[Issue を作成](https://github.com/cat394/simplest/issues)してディスカッションを始めてください。
-- **コードを書く**：既存の Issue に取り組むか、自分で新しい Issue を作成し、Pull Request（PR）を送ってください。
-
-### プルリクエストのプロセス
-
-1. プロジェクトの最新の`main`ブランチから新しいブランチを作成してください。
-2. あなたの変更をコミットし、変更が何をするものか明確に説明するコミットメッセージを書いてください。
-3. あなたのブランチに変更をプッシュした後、プロジェクトに対してプルリクエストを作成してください。
-4. プルリクエストの説明には、変更の理由とその影響を詳細に説明してください。
-5. レビューのフィードバックがあれば、対応して変更を加えてください。
-
-### コード規約
-
-#### コーディングスタイル
-
-- **可読性優先**: コードは清潔かつ読みやすいものにします。適切なインデント、スペース、命名規則を使用します。
-- **一貫性**: プロジェクト全体で一貫したコーディングスタイルを保持します。既存のコードを参照して、スタイルを一致させます。
-
-#### 命名規則
-
-- **明瞭な命名**: 変数、関数、クラスの名前は、その目的や動作を明確に反映させます。
-- **キャメルケース使用**: 変数や関数名には`lowerCamelCase`を、クラス名には`UpperCamelCase`を使用します。
-
-#### コード構造
-
-- **関数とクラス**: 小さく、再利用可能な関数とクラスにコードを分割します。一つの関数は一つの機能のみを担当します。
-- **モジュール性**: コードはモジュール性を意識して構造化します。関連する機能は同じファイルやモジュール内にまとめます。
-
-#### 詳しい説明
-
-PR される関数やクラスは、その目的、引数、返り値について詳しく述べてください。
-
-#### テスト
-
-- **自動テストの実装**: 単体テストや統合テストを実装し、コードの信頼性を保証します。テストはコードの変更ごとに実行します。
-
-#### パフォーマンス
-
-- **効率的なコード**: パフォーマンスを意識したコーディング。不要な計算やリソースの浪費を避けます。
-
-### コミュニケーション
-
-- 質問やディスカッションのためには、[GitHub Discussions](https://github.com/cat394/simplest/discussions)を利用してください。
-- 貢献に関する特定の質問がある場合は、直接[メンテナーに連絡](ryo.crox9@passinbox.com)してください。
-
-皆さんの貢献を心よりお待ちしています！
-
 ## ライセンス
 
 MIT License
 
 </details>
+
+> [!CAUSION]
+> First off, I really like the idea of this project. But this was a dud. As such, I will not continue developing this in the future.
+> I have tried to be as helpful and detailed as possible, in case there are other developers out there who have the same idea as I do and are in similar difficulties.
+
+## Powerful inline styling with Web components
+
+## How to play?
+
+```bash
+npm i
+npm run serve
+```
 
 > The following text was translated from Japanese to English by ChatGPT. Therefore, you may see many grammatical errors.
 
