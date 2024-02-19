@@ -60,6 +60,7 @@ const customElementSettings: CustomElementSettings = {
   grid: {
     styles: [
       'justifyItems',
+      'placeItems',
       'gridTemplateColumns',
       'gridTemplateRows',
       'gridTemplateAreas',
