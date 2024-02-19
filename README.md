@@ -13,6 +13,7 @@
 
 ```bash
 npm i
+npm run build
 npm run serve
 ```
 
@@ -708,6 +709,7 @@ MIT License
 
 ```bash
 npm i
+npm run build
 npm run serve
 ```
 
@@ -1243,6 +1245,7 @@ While the logic of Simplest is simple, there are still some points that have not
   | `data-overflow`     | `overflow`     |
   | `data-z-index`      | `z-index`      |
   | `data-aspect-ratio` | `aspect-ratio` |
+  | `data-resize`       | `resize`       |
 
 - **layoutBox (Inherited by `data-flex` and `s-grid` components)**
 
@@ -1251,7 +1254,6 @@ While the logic of Simplest is simple, there are still some points that have not
   | `data-align-content`   | `align-content`   |
   | `data-align-items`     | `align-items`     |
   | `data-justify-content` | `justify-content` |
-  | `data-justify-items`   | `justify-items`   |
   | `data-place-content`   | `place-content`   |
   | `data-place-items`     | `place-items`     |
   | `data-gap`             | `gap`             |
@@ -1266,14 +1268,16 @@ While the logic of Simplest is simple, there are still some points that have not
 
   - `s-grid`
 
-    | attribute           | CSS property            |
-    | ------------------- | ----------------------- |
-    | `data-columns`      | `grid-template-columns` |
-    | `data-rows`         | `grid-template-rows`    |
-    | `data-areas`        | `grid-template-areas`   |
-    | `data-auto-columns` | `grid-auto-columns`     |
-    | `data-autor-rows`   | `grid-auto-rows`        |
-    | `data-auto-flow`    | `data-auto-flow`        |
+    | attribute            | CSS property            |
+    | -------------------- | ----------------------- |
+    | `data-justify-items` | `justify-items`         |
+    | `data-place-items`   | `place-items`           |
+    | `data-columns`       | `grid-template-columns` |
+    | `data-rows`          | `grid-template-rows`    |
+    | `data-areas`         | `grid-template-areas`   |
+    | `data-auto-columns`  | `grid-auto-columns`     |
+    | `data-autor-rows`    | `grid-auto-rows`        |
+    | `data-auto-flow`     | `data-auto-flow`        |
 
 - **layoutItem (Inherited by `data-flex-item` and `s-grid-item` components)**
 
@@ -1295,6 +1299,7 @@ While the logic of Simplest is simple, there are still some points that have not
     | attribute           | CSS property   |
     | ------------------- | -------------- |
     | `data-justify-self` | `justify-self` |
+    | `data-place-self`   | `place-self`   |
     | `data-column`       | `grid-column`  |
     | `data-row`          | `grid-row`     |
     | `data-area`         | `grid-area`    |
@@ -1397,60 +1402,6 @@ While the logic of Simplest is simple, there are still some points that have not
     [SOME_CONTENT]
   </s-effect>
   ```
-
-## Contribution methods
-
-Thank you for considering your interest and contribution to our project! In this section, we will explain how you can contribute and how the process will proceed.
-
-### Ways to Contribute
-
-- **Bug Reporting**: If you find any bugs while using the project, please create an [Issue](https://github.com/cat394/simplest/issues) to report it.
-- **Feature Suggestions**: If you have ideas for new features, please start a [Discussion](https://github.com/cat394/simplest/issues) by creating an Issue.
-- **Writing Code**: Work on existing Issues or create new ones and submit a Pull Request (PR).
-
-### Pull Request Process
-
-1. Create a new branch from the latest `main` branch of the project.
-2. Commit your changes and write a commit message that clearly explains what the changes do.
-3. After pushing your changes to your branch, create a Pull Request for the project.
-4. In the Pull Request description, provide a detailed explanation of the reasons for the changes and their impact.
-5. If there is feedback from the review, make the necessary changes accordingly.
-
-### Code Conventions
-
-#### Coding Style
-
-- **Prioritize Readability**: Code should be clean and easy to read. Use appropriate indentation, spacing, and naming conventions.
-- **Consistency**: Maintain a consistent coding style throughout the project. Refer to existing code to align styles.
-
-#### Naming Conventions
-
-- **Clear Naming**: Names of variables, functions, and classes should clearly reflect their purpose or behavior.
-- **CamelCase Usage**: Use `lowerCamelCase` for variables and functions, and `UpperCamelCase` for class names.
-
-#### Code Structure
-
-- **Functions and Classes**: Break down code into small, reusable functions and classes. Each function should handle a single functionality.
-- **Modularity**: Structure code with modularity in mind. Group related functionalities within the same file or module.
-
-#### Detailed explanation
-
-You should describe in detail the purpose, arguments, and return value of the function or class being PRed.
-
-#### Testing
-
-- **Implement Automated Tests**: Implement unit and integration tests to ensure code reliability. Run tests with every code change.
-
-#### Performance
-
-- **Efficient Code**: Code with performance in mind. Avoid unnecessary calculations and resource wastage.
-
-#### Communication
-
-- For questions and discussions, please use [GitHub Discussions](https://github.com/cat394/simplest/discussions).
-- If you have specific questions regarding contributions, please contact the [maintainer](ryo.crox9@passinbox.com) directly.
-
-We are looking forward to your contributions!
 
 ## License
 
