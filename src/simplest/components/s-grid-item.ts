@@ -4,12 +4,15 @@ import {setConverter} from '../converter';
 import {SLayoutItem} from './s-layout-item';
 
 const {tagName, styles} = CUSTOM_ELEMENT_SETTINGS.gridItem;
-const {justifySelf, gridColumn, gridRow, gridArea} = styles;
+const {justifySelf, gridColumn, gridRow, gridArea, placeSelf} = styles;
 
 @customElement(tagName)
 export class SGridItem extends SLayoutItem {
   @property(setConverter(justifySelf))
   justifySelf = '';
+
+  @property(setConverter(placeSelf))
+  placeSelf = '';
 
   @property(setConverter(gridColumn))
   gridColumn = '';
@@ -25,6 +28,7 @@ export class SGridItem extends SLayoutItem {
       super.getLayoutItemStyles() +
       super.combineStyles([
         this.justifySelf,
+        this.placeSelf,
         this.gridColumn,
         this.gridRow,
         this.gridArea,
