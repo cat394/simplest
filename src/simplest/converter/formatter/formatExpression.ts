@@ -40,12 +40,8 @@ export const formatExpression = (simple: string): string => {
       );
     };
 
-  if (!simple.includes(EXPRESSION.START) || simple.startsWith('var')) {
+  if (simple.startsWith('var')) {
     return simple;
-  }
-
-  if (!simple.includes(EXPRESSION.END)) {
-    throw new Error(`Expression is not closing.\nMistake place:${simple}`);
   }
 
   const cssVarRegex = /var\((.*?)\)/g;
