@@ -4,7 +4,7 @@ import {setConverter} from '../converter';
 import {SBase} from './s-base';
 
 const {tagName, styles} = CUSTOM_ELEMENT_SETTINGS.effect;
-const {opacity, filter, backdropFilter, blendMode, clipPath} = styles;
+const {opacity, filter, backdropFilter, mixBlendMode, clipPath} = styles;
 
 @customElement(tagName)
 export class SEffect extends SBase {
@@ -17,8 +17,8 @@ export class SEffect extends SBase {
   @property(setConverter(backdropFilter))
   backdropFilter = '';
 
-  @property(setConverter(blendMode))
-  blendMode = '';
+  @property(setConverter(mixBlendMode))
+  mixBlendMode = '';
 
   @property(setConverter(clipPath))
   clipPath = '';
@@ -26,11 +26,12 @@ export class SEffect extends SBase {
   getEffectStyles(): string {
     return (
       super.getBaseStyles() +
+      super.addDefaultStyles({height: '100%'}) +
       super.combineStyles([
         this.opacity,
         this.filter,
         this.backdropFilter,
-        this.blendMode,
+        this.mixBlendMode,
         this.clipPath,
       ])
     );
