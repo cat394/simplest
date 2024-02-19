@@ -18,37 +18,56 @@
   --gap-4: 1.8rem;
   --gap-3: 1.6rem;
   --gap-2: 1.4rem;
-  --gap-1: 1.2rem;
+  --gap-1: 0.5rem;
 
   --line-thin-1: 1px;
   --line-thin-2: 1.5px;
-  --line-thin-3: 2px;
+  --line-thin-3: 3.5px;
 
-  --theme-4: oklab(0.19 0 0);
-  --theme-3: #5b5899;
-  --theme-2: #878787;
-  --theme-1: #f0ece5;
+  --radius-round: 1000px;
 
-  --accent-1: #ea638c;
-  --accent-2: #FC0;
+  --main-bg: #161821;
+  --main-text: #c6c8d1;
+  --theme-1: #287a8b;
+  --theme-2: #5b5899;
+  --theme-3: #b4be82;
 
-  --gradient-1: linear-gradient(to right, rgba(247,234,163,1) 0%, rgba(236,180,238,0.56) 46.4%, rgba(163,203,247,1) 100.7% );
+  --accent-1: #ae546c;
+  --accent-2: #fc0;
+  --accent-3: #84a0c6;
+  --accent-4: #ff0cba;
+
+  --gradient-1: linear-gradient(
+    45deg,
+    rgba(247, 234, 163, 1) 0%,
+    rgba(236, 180, 238, 0.56) 46.4%,
+    rgba(163, 203, 247, 1) 100.7%
+  );
+
+  --gradient-2: radial-gradient( circle farthest-corner at 10% 20%,  rgb(224, 136, 221) 17.8%, rgb(133, 198, 201) 100.2% );
+
+  --p-main-grid: repeat(3, 1fr);
+  --p-main-grid-gap: var(--gap-4);
 
   --p-navigation-text-color: transparent;
-  --p-navigation-link-underline: solid underline var(--theme-1) var(--line-thin-1);
+  --p-navigation-link-underline: solid underline var(--main-text)
+    var(--line-thin-1);
   --p-separator-width: 90%;
   --p-property-name-shadow: var(--accent-2) 1px 0 10px;
   --p-separator-gap: calc(var(--gap-5) * 2.5);
+  --p-box-size: 100px;
+  --p-container-ratio: 16 / 9;
+  --p-item-box: 30px;
   --p-box-stripe: repeating-linear-gradient(
     -45deg,
-    rgb(37, 165, 153) 0 10px,
-    white 10px 20px
+    var(--theme-1) 0 10px,
+    var(--main-text) 10px 20px
   );
 }
 
 body {
-  background-color: var(--theme-4);
-  color: var(--theme-1);
+  background-color: var(--main-bg);
+  color: var(--main-text);
   margin-inline: var(--gap-2);
   margin-block: 2rem;
   font-size: var(--text-size-2);
@@ -62,11 +81,18 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: normal;
 }
 
 h2 {
-  width: 90%;
-  border-bottom: var(--line-thin-1) solid var(--theme-2);
+  width: 60%;
+  border-bottom: var(--line-thin-1) solid var(--accent-3);
+}
+
+img {
+  vertical-align: middle;
 }
