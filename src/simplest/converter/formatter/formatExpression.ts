@@ -1,6 +1,6 @@
 import {ESCAPED_MARKERS, MARKERS} from '../settings/config';
 
-const {EXPRESSION, SIMPLE_AREA} = MARKERS;
+const {SIMPLE_AREA} = MARKERS;
 const {ESCAPED_IGNORE_AREA, ESCAPED_SIMPLE_AREA} = ESCAPED_MARKERS;
 
 type ReplaceResult = {
