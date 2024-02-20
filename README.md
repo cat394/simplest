@@ -8,13 +8,21 @@
 
 ## ウェブコンポーネントによる強力なインラインスタイリング
 
-> Simplest はまだ実用化できる段階ではありません。これを試してみたい方は、ダウンロードし、以下のコマンドを使用して`index.html`を編集することで遊ぶことができます。
+## 使い始める
 
 ```bash
-npm i
-npm run build
-npm run serve
+npm i @ryo-cat394/simplest
 ```
+
+```js
+import '@ryo-cat394/simplest';
+```
+
+```html
+  <s-text data-color="red;">Hello</s-text>
+```
+
+この他にも`<s-bg>`, `<s-flex>`, `<s-grid>`などいくつかのコンポーネントも使用することができ、これらを組み合わせて多彩なスタイリングを実現できます。
 
 ## Simplest とは？
 
@@ -698,19 +706,22 @@ MIT License
 
 </details>
 
-> [!CAUSION]
 > First off, I really like the idea of this project. But this was a dud. As such, I will not continue developing this in the future.
 > I have tried to be as helpful and detailed as possible, in case there are other developers out there who have the same idea as I do and are in similar difficulties.
 
 ## Powerful inline styling with Web components
 
-## How to play?
+## Getting started
 
 ```bash
-npm i
-npm run build
-npm run serve
+npm i @ryo-cat394/simplest
 ```
+
+```js
+import '@ryo-cat394/simplest';
+```
+
+You can also use several other components such as `<s-bg>`, `<s-flex>`, and `<s-grid>`, and you can combine these to create a variety of styling.
 
 > The following text was translated from Japanese to English by ChatGPT. Therefore, you may see many grammatical errors.
 
