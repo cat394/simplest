@@ -5,7 +5,7 @@
   "main": "simplest/components/index.js",
   "module": "simplest/components/index.js",
   "files": [
-    "simplest/component/*.js",
+    "simplest/",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"
