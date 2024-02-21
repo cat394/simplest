@@ -4,6 +4,12 @@
   "description": "Web components that enable styling with HTML",
   "main": "simplest/components/index.js",
   "module": "simplest/components/index.js",
+  "files": [
+    "simplest/component/*.js",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
   "type": "module",
   "scripts": {
     "build": "tsc",
