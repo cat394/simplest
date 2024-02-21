@@ -11,11 +11,11 @@
 ## 使い始める
 
 ```bash
-npm i @ryo-cat394/simplest
+npm i @simplest-css/simplest
 ```
 
 ```js
-import '@ryo-cat394/simplest';
+import '@simplest-css/simplest';
 ```
 
 ```html
@@ -714,11 +714,11 @@ MIT License
 ## Getting started
 
 ```bash
-npm i @ryo-cat394/simplest
+npm i @simplest-css/simplest
 ```
 
 ```js
-import '@ryo-cat394/simplest';
+import '@simplest-css/simplest';
 ```
 
 You can also use several other components such as `<s-bg>`, `<s-flex>`, and `<s-grid>`, and you can combine these to create a variety of styling.
