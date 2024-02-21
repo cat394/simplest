@@ -1,6 +1,6 @@
 {
   "name": "simplest",
-  "version": "0.0.1-alpha",
+  "version": "0.0.1",
   "description": "Web components that enable styling with HTML",
   "main": "simplest/components/index.js",
   "module": "simplest/components/index.js",
