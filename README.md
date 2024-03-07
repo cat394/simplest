@@ -10,19 +10,49 @@
 
 ## 使い始める
 
-```bash
-npm i @simplest-css/simplest
-```
+1. インストール
 
-```js
-import '@simplest-css/simplest';
-```
+  ```bash
+  npm i @simplest-css/simplest
+  ```
 
-```html
-  <s-text data-color="red;">Hello</s-text>
-```
+2. 準備
 
-この他にも`<s-bg>`, `<s-flex>`, `<s-grid>`などいくつかのコンポーネントも使用することができ、これらを組み合わせて多彩なスタイリングを実現できます。
+  Webコンポーネントは非同期で読み込まれるため、FOUCEが発生しレイアウトシフトを目にする可能性があります。そのため、`<head>`タグ内に以下のコードを挿入することで、完全にWebコンポーネントが読み込まれた状態でコンテンツを表示させます。
+
+  ```html
+  <script type="module" src="./node-modules/simplest"></script>
+  <style>
+    body {
+      opacity: 0;
+    }
+    body.ready {
+      opacity: 1;
+      transition: 300ms opacity;
+    }
+  </style>
+  <script type="module">
+    await Promise.allSettled([
+      customElements.whenDefined('s-text'),
+      customElements.whenDefined('s-bg'),
+      customElements.whenDefined('s-box'),
+      customElements.whenDefined('s-flex'),
+      customElements.whenDefined('s-grid'),
+      customElements.whenDefined('s-flex-item'),
+      customElements.whenDefined('s-grid-item'),
+      customElements.whenDefined('s-effect'),
+    ]);
+    document.body.classList.add('ready');
+  </script>
+  ```
+
+3. 使う
+
+  ```html
+    <s-text data-color="red;">Hello</s-text>
+  ```
+
+  この他にも`<s-bg>`, `<s-flex>`, `<s-grid>`などいくつかのコンポーネントも使用することができ、これらを組み合わせて多彩なスタイリングを実現できます。
 
 ## Simplest とは？
 
@@ -713,15 +743,49 @@ MIT License
 
 ## Getting started
 
-```bash
-npm i @simplest-css/simplest
-```
+1. Installation
 
-```js
-import '@simplest-css/simplest';
-```
+  ```bash
+  npm i @simplest-css/simplest
+  ```
 
-You can also use several other components such as `<s-bg>`, `<s-flex>`, and `<s-grid>`, and you can combine these to create a variety of styling.
+2. Preparation
+
+   Web components are loaded asynchronously, so you can encounter FOUCEs and see layout shifts. Therefore, by inserting the following code within the `<head>` tag, the content will be displayed with the web component fully loaded.
+
+  ```html
+  <script type="module" src="./node-modules/simplest"></script>
+  <style>
+    body {
+      opacity: 0;
+    }
+    body.ready {
+      opacity: 1;
+      transition: 300ms opacity;
+    }
+  </style>
+  <script type="module">
+    await Promise.allSettled([
+      customElements.whenDefined('s-text'),
+      customElements.whenDefined('s-bg'),
+      customElements.whenDefined('s-box'),
+      customElements.whenDefined('s-flex'),
+      customElements.whenDefined('s-grid'),
+      customElements.whenDefined('s-flex-item'),
+      customElements.whenDefined('s-grid-item'),
+      customElements.whenDefined('s-effect'),
+    ]);
+    document.body.classList.add('ready');
+  </script>
+  ```
+
+3. Use element
+  
+  ```html
+  <s-text data-color="red;">Hello</s-text>
+  ```
+
+  You can also use several other components such as `<s-bg>`, `<s-flex>`, and `<s-grid>`, and you can combine these to create a variety of styling.
 
 > The following text was translated from Japanese to English by ChatGPT. Therefore, you may see many grammatical errors.
 
