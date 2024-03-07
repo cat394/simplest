@@ -511,15 +511,15 @@ Simplest のロジックは単純ですが、まだ実用までには至らな�
    代表例として、transform プロパティを取り上げると、これは追加のロジックを必要とするため実装するには少し時間がかかります。私たちの草案は以下のようになります。
 
    ```html
-   <data-transform
+   <s-transform
      data-translate="x=1rem;"
      data-rotate="45deg;"
      data-scale="1.5|z=2;"
-     >[SOME_CONTENT]</data-transform
+     >[SOME_CONTENT]</s-transform
    >
    ```
 
-   このように、`<data-transform>`要素を使用すると transform プロパティを直感的に利用することが可能になります。
+   このように、`<s-transform>`要素を使用すると transform プロパティを直感的に利用することが可能になります。
 
 ## コンポーネントとカスタム属性一覧
 
@@ -586,7 +586,7 @@ Simplest のロジックは単純ですが、まだ実用までには至らな�
   | `data-aspectRatio` | `aspect-ratio` |
   | `data-resize`      | `resize`       |
 
-- **layoutBox (`data-flex`と`s-grid`コンポーネントで継承されている)**
+- **layoutBox (`s-flex`と`s-grid`コンポーネントで継承されている)**
 
   | 属性                   | CSS プロパティ    |
   | ---------------------- | ----------------- |
@@ -617,7 +617,7 @@ Simplest のロジックは単純ですが、まだ実用までには至らな�
     | `data-autor-rows`   | `grid-auto-rows`        |
     | `data-auto-flow`    | `grid-auto-flow`        |
 
-- **layoutItem (`data-flex-item`と`s-grid-item`コンポーネントで継承されている)**
+- **layoutItem (`s-flex-item`と`s-grid-item`コンポーネントで継承されている)**
 
   | 属性              | CSS プロパティ |
   | ----------------- | -------------- |
@@ -701,15 +701,15 @@ Simplest のロジックは単純ですが、まだ実用までには至らな�
   - Flex:
 
     ```html
-    <data-flex
+    <s-flex
       data-justify-content="center;"
       data-align-items="center;"
       data-gap="1rem;"
     >
-      <data-flex-item data-align-self="end;" data-order="1;"
-        >[SOME_CONTENT]</data-flex-item
+      <s-flex-item data-align-self="end;" data-order="1;"
+        >[SOME_CONTENT]</s-flex-item
       >
-    </data-flex>
+    </s-flex>
     ```
 
   - Grid:
@@ -1246,11 +1246,11 @@ While the logic of Simplest is simple, there are still some points that have not
    It will take some time to support the transform property. This is because implementing it requires additional logic to the existing Simplest processing. Our proposal is as follows.
 
    ```html
-   <data-transform
+   <s-transform
      data-translate="x=1rem;"
      data-rotate="45deg;"
      s-scale="1.5|z=2;"
-     >[SOME_CONTENT]</data-transform
+     >[SOME_CONTENT]</s-transform
    >
    ```
 
@@ -1321,7 +1321,7 @@ While the logic of Simplest is simple, there are still some points that have not
   | `data-aspect-ratio` | `aspect-ratio` |
   | `data-resize`       | `resize`       |
 
-- **layoutBox (Inherited by `data-flex` and `s-grid` components)**
+- **layoutBox (Inherited by `s-flex` and `s-grid` components)**
 
   | attribute              | CSS property      |
   | ---------------------- | ----------------- |
@@ -1353,7 +1353,7 @@ While the logic of Simplest is simple, there are still some points that have not
     | `data-autor-rows`    | `grid-auto-rows`        |
     | `data-auto-flow`     | `data-auto-flow`        |
 
-- **layoutItem (Inherited by `data-flex-item` and `s-grid-item` components)**
+- **layoutItem (Inherited by `s-flex-item` and `s-grid-item` components)**
 
   | attribute         | CSS property |
   | ----------------- | ------------ |
@@ -1448,15 +1448,15 @@ While the logic of Simplest is simple, there are still some points that have not
   - Flex:
 
     ```html
-    <data-flex
+    <s-flex
       data-justify-content="center;"
       data-align-items="center;"
       data-gap="1rem;"
     >
-      <data-flex-item data-align-self="end;" data-order="1;"
-        >[SOME_CONTENT]</data-flex-item
+      <s-flex-item data-align-self="end;" data-order="1;"
+        >[SOME_CONTENT]</s-flex-item
       >
-    </data-flex>
+    </s-flex>
     ```
 
   - Grid:
